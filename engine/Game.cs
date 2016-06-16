@@ -80,7 +80,9 @@ namespace engine
         public void LoadShaderFromFile(string filename, ShaderType type, int program, out int address)
         {
             address = GL.CreateShader(type);
-            using (var sr = new StreamReader(@"C:\Users\Tree\Documents\GitHub\engine\engine\Shaders\" + filename))
+            var fullPath = string.Format("{0}\\..\\..\\Shaders\\{1}", Environment.CurrentDirectory, filename);
+            //D:\Projects\engine\engine\bin\Debug
+            using (var sr = new StreamReader(fullPath))
             {
                 GL.ShaderSource(address, sr.ReadToEnd());
             }

@@ -4,7 +4,8 @@
     {
         private static void Main(string[] args)
         {
-            using (var game = new Game(GameWorldFactory.BuildNewVertexBuffer()))
+            //using (var game = new Game(GameWorldFactory.BuildNewVertexBuffer()))
+            using (var game = new Game(GameWorldFactory.BuildManagedTerrain()))
             {
                 game.Run();
             }
